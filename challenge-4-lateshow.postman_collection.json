@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Late Show API Challenge",
+    "_postman_id": "c9d0e1f2-a3b4-5678-2345-9012345678",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/login"
+      }
+    },
+    {
+      "name": "Get Episodes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/episodes"
+      }
+    },
+    {
+      "name": "Get Episode",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/episodes/1"
+      }
+    },
+    {
+      "name": "Delete Episode",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/episodes/1"
+      }
+    },
+    {
+      "name": "Get Guests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/guests"
+      }
+    },
+    {
+      "name": "Create Appearance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"rating\": 4, \"guest_id\": 1, \"episode_id\": 1}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/appearances"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
